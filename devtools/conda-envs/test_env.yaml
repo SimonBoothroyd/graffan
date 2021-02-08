@@ -1,0 +1,32 @@
+name: test
+channels:
+  - conda-forge
+  - omnia
+  - defaults
+dependencies:
+    # Base depends
+  - python
+  - pip
+
+    # Core dependencies
+  - click
+  - openforcefield
+  - rdkit
+  - numpy
+  - forcebalance
+  - pydantic
+
+    # Dashboard
+  - dash
+
+    # Test dependencies
+  - pytest
+  - pytest-cov
+  - codecov
+  - deepdiff
+
+    # Developer dependencies
+    # - Linting
+  - isort
+  - black
+  - flake8
