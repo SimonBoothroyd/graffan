@@ -42,7 +42,7 @@ def smiles_to_svg(smiles: str, highlight_smirks: Optional[str]) -> str:
 
     if highlight_smirks is not None:
 
-        openff_molecule = Molecule.from_smiles(smiles)
+        openff_molecule = Molecule.from_smiles(smiles, allow_undefined_stereo=True)
 
         matches = RDKitToolkitWrapper().find_smarts_matches(
             openff_molecule, highlight_smirks
