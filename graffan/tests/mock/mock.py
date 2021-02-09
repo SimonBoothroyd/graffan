@@ -86,14 +86,14 @@ def mock_targets(targets: List[FittingTarget]):
 
         if isinstance(target, SingleMoleculeTarget):
 
-            Molecule.from_smiles(target.molecule).to_file(
+            Molecule.from_smiles(target.molecule, allow_undefined_stereo=True).to_file(
                 os.path.join("targets", target.name, "input.sdf"), "SDF"
             )
 
         else:
 
             for i, smiles in enumerate(target.molecules):
-                Molecule.from_smiles(smiles).to_file(
+                Molecule.from_smiles(smiles, allow_undefined_stereo=True).to_file(
                     os.path.join("targets", target.name, f"MOL_{i}.sdf"), "SDF"
                 )
 
