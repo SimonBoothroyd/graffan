@@ -18,6 +18,7 @@ dependencies:
 
     # Dashboard
   - dash
+  - dash_bootstrap_components
 
     # Test dependencies
   - pytest
