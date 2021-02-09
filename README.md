@@ -13,9 +13,17 @@ contributions to the gradient of the objective function.
 
 The package and its dependencies can be installed using the `conda` package manager:
 
-```
+```shell
 conda env create --name graffan --file devtools/conda-envs/test_env.yaml
 python setup.py develop
+```
+
+If any targets require MOL2 or GZipped SDF (`*.sdf.gz`) molecule files then you will also need to install the OpenEye
+toolkit as the `openff-toolkit` package does not currently support loading these formats through RDKit. The OpenEye 
+toolkits can be installed by first activating the `graffan` conda environment created above, and then running:
+
+```shell
+conda install -c openeye openeye-toolkits
 ```
 
 ## Getting Started
